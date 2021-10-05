@@ -19,6 +19,8 @@ function router() {
     return $router;
 }
 
+$router->get('/', [\Hillel\Controllers\HomeController::class, 'index']);
+
 $router->prefix('categories')->group(function($router){
     $router->get('/', [\Hillel\Controllers\CategoryController::class, 'index']);
 
