@@ -22,7 +22,7 @@ $blueprint->text('body');
 $blueprint->foreignId('category_id');
 $blueprint->timestamps();
 $blueprint->create();
-$blueprint->foreign('category_id')->references('id')->on('categories');
+$blueprint->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete()->cascadeOnUpdate();
 $blueprint->build($capsule->getConnection(), new Illuminate\Database\Schema\Grammars\MySqlGrammar());
 
 $blueprint = new Illuminate\Database\Schema\Blueprint('tags');

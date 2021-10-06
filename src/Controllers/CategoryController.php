@@ -20,7 +20,7 @@ class CategoryController
         $data = [];
 
         if ($request->method() == 'POST') {
-            if(!$request->has('id')) {
+            if (!$request->has('id')) {
                 Category::create([
                     'title' => $request->get('title'),
                     'slug' => $request->get('slug'),
